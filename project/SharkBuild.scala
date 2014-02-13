@@ -50,6 +50,7 @@ object SharkBuild extends Build {
     id = "root",
     base = file("."),
     settings = coreSettings ++ assemblyProjSettings)
+      .settings(net.virtualvoid.sbt.graph.Plugin.graphSettings: _*)
 
   val excludeKyro = ExclusionRule(organization = "de.javakaffee")
   val excludeHadoop = ExclusionRule(organization = "org.apache.hadoop")
